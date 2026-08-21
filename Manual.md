@@ -1,12 +1,13 @@
 # Universidad de San Carlos de Guatemala
-**Facultad de Ingeniería**
-**Escuela de Ciencias y Sistemas (ECYS)**
-**Prácticas Iniciales - Sección C**
+
+- **Facultad de Ingeniería**
+- **Escuela de Ciencias y Sistemas (ECYS)**
+- **Prácticas Iniciales - Sección C**
 
 ---
-**Nombre**: Josué Javier Carrera Soyós
-**Carné**: 202300834
-**Fecha**: 20 de agosto de 2026
+- **Nombre**: Josué Javier Carrera Soyós
+- **Carné**: 202300834
+- **Fecha**: 20 de agosto de 2026
 
 ---
 # MANUAL TÉCNICO: INTRODUCCION A LINUX Y ENTORNOS EN LA NUBE
@@ -43,7 +44,7 @@ Para ello:
 
 > **¿Qué es una imagen ISO?** Es un archivo que contiene una copia exacta de todo el contenido de un disco, en este caso el medio de instalación del sistema operativo. Sirve como "plantilla" a partir de la cual se instala Ubuntu en la máquina virtual.
 
-![[Screenshot_20260817_142825.png]]
+![Screenshot_20260817_142825.png](Attachments/Screenshot_20260817_142825.png)
 
 ### 1.2 Descarga e instalación de VirtualBox
 
@@ -53,13 +54,13 @@ Posteriormente se procedió a descargar VirtualBox desde su sitio web oficial: [
 - Se encuentra disponible para los principales sistemas operativos: Windows, Linux y macOS.
 - En esta práctica se utiliza la virtualización como medio para instalar y probar Ubuntu sin afectar al sistema principal.
 
-![[Screenshot_20260817_144113.png]]
+![Screenshot_20260817_144113.png](Attachments/Screenshot_20260817_144113.png)
 
 ### 1.3 Creación de una nueva máquina virtual
 
 Una vez instalado VirtualBox, se abrió la aplicación y se hizo clic en el botón **"New"**, el cual se encuentra señalado en color rojo en la imagen. Este botón permite crear una nueva máquina virtual desde cero.
 
-![[Screenshot_20260817_143143.png]]
+![Screenshot_20260817_143143.png](Attachments/Screenshot_20260817_143143.png)
 
 Al presionar el botón se despliega un asistente de configuración compuesto por varias secciones, que se detallan a continuación.
 
@@ -72,7 +73,7 @@ En la sección *Virtual Machine Name and Operating System* se definen los datos 
 - **ISO Image**: se selecciona la imagen ISO de Ubuntu 24.04 descargada anteriormente.
 - **Proceed with Unattended Installation**: opción marcada que permite automatizar la instalación del sistema, evitando pasos manuales durante el proceso.
 
-![[Screenshot_20260817_143213 1.png]]
+![Screenshot_20260817_143213 1.png](Attachments/Screenshot_20260817_143213%201.png)
 
 #### 1.3.2 Configuración automática del sistema invitado
 
@@ -81,7 +82,7 @@ En la sección *Set Up Unattended Guest OS Installation* se configuran las crede
 - **User Name**: nombre del usuario administrador del sistema.
 - **Password** y **Confirm Password**: contraseña de acceso al sistema, ingresada dos veces para confirmarla.
 
-![[Screenshot_20260817_143233.png]]
+![Screenshot_20260817_143233.png](Attachments/Screenshot_20260817_143233.png)
 
 #### 1.3.3 Recursos de hardware virtual
 
@@ -91,7 +92,7 @@ En la sección *Specify Virtual Hardware* se asignan los recursos de hardware qu
 - **Number of CPUs**: número de núcleos de procesador asignados.
 - **Use EFI**: opción desmarcada, por lo que se utiliza el firmware tradicional (BIOS) en lugar del modo EFI.
 
-![[Screenshot_20260817_143255.png]]
+![Screenshot_20260817_143255.png](Attachments/Screenshot_20260817_143255.png)
 
 #### 1.3.4 Creación del disco duro virtual
 
@@ -99,7 +100,7 @@ En la sección *Create a New Virtual Hard Disk* se configura el almacenamiento:
 
 - Se elige la opción **Create a New Virtual Hard Disk**, que genera un archivo de disco virtual donde se guardará el sistema operativo y todos sus datos.
 
-![[Screenshot_20260817_143300.png]]
+![Screenshot_20260817_143300.png](Attachments/Screenshot_20260817_143300.png)
 
 ## 2. Guía De Comandos CLI
 
@@ -129,7 +130,7 @@ Partiendo del directorio `/home/vboxuser/` se ejecutaron los comandos `pwd`, `pw
 
 Se obtendría una diferencia únicamente si el directorio actual se alcanzara mediante un enlace simbólico: `pwd -P` mostraría la ruta real del directorio destino (resolviendo el enlace), mientras que `pwd -L` mostraría la ruta lógica que incluye el enlace simbólico.
 
-![[Pasted image 20260819220805.png]]
+![Pasted image 20260819220805.png](Attachments/Pasted%20image%2020260819220805.png)
 
 #### `cd` (Change Directory)
 
@@ -155,7 +156,7 @@ Partiendo del directorio `/home/vboxuser/` se ejecutaron los siguientes comandos
 - `cd Desktop/Tarea/`: navegó directamente a la carpeta `Tarea` ubicada dentro de `Desktop`, usando una ruta relativa.
 - `cd`: sin argumentos, regresó al directorio personal `/home/vboxuser/`.
 
-![[Pasted image 20260819222456.png]]
+![Pasted image 20260819222456.png](Attachments/Pasted%20image%2020260819222456.png)
 
 ### 2.2 Comandos de listado y creación
 
@@ -182,13 +183,13 @@ Estando en `/home/vboxuser/` se ejecutaron los comandos `ls`, `ls -l` y `ls -a`:
 - `ls -l`: mostró el listado en formato detallado (permisos, propietario, tamaño y fecha de modificación).
 - `ls -a`: listó todos los archivos, incluidos los ocultos (los que comienzan con `.`).
 
-![[Pasted image 20260819222706.png]]
+![Pasted image 20260819222706.png](Attachments/Pasted%20image%2020260819222706.png)
 
 Luego se ejecutaron los comandos `ls -lh` y `ls -la`:
 - `ls -lh`: mostró el listado detallado con los tamaños en formato legible para humanos (KB, MB, GB).
 - `ls -la`: combinó el formato largo con la visualización de los archivos ocultos.
 
-![[Pasted image 20260819222857.png]]
+![Pasted image 20260819222857.png](Attachments/Pasted%20image%2020260819222857.png)
 
 #### `mkdir` (Make Directory)
 
@@ -214,7 +215,7 @@ A continuación, se realizaron los procedimientos de creación de directorios:
 
 Para finalizar, se ejecutaron comandos `ls` en las rutas creadas para verificar la correcta estructura del árbol de directorios.
 
-![[Pasted image 20260820172817.png]]
+![Pasted image 20260820172817.png](Attachments/Pasted%20image%2020260820172817.png)
 
 ### 2.3 Comandos de manipulación de archivos
 
@@ -240,7 +241,7 @@ Posteriormente, se realizaron las siguientes operaciones:
 - `cp -r Reporte/ Reporte-copy/`: Copió la carpeta `Reporte` y todo su contenido de forma recursiva hacia un nuevo directorio denominado `Reporte-copy`.
 - `ls Reporte-copy/`: Permitió comprobar que la estructura interna y los archivos contenidos en la carpeta original fueron duplicados de manera exitosa.
 
-![[Pasted image 20260820172218.png]]
+![Pasted image 20260820172218.png](Attachments/Pasted%20image%2020260820172218.png)
 
 #### `mv` (Move)
 
@@ -264,7 +265,7 @@ Luego se realizaron las siguientes acciones:
 - `ls`: Permitió corroborar que el archivo original ya no figuraba en la ruta actual (`Desktop`).
 - `ls Reporte/`: Confirmó la reubicación exitosa del archivo dentro de la carpeta `Reporte`.
 
-![[Pasted image 20260820173250.png]]
+![Pasted image 20260820173250.png](Attachments/Pasted%20image%2020260820173250.png)
 
 #### `rm` (Remove)
 
@@ -290,7 +291,7 @@ A continuación, se llevaron a cabo los siguientes pasos:
 - `rm -r Reporte/`: Eliminó la carpeta `Reporte` junto con todo su contenido interno de manera recursiva.
 - `ls`: Confirmó de forma definitiva la eliminación total de los archivos y directorios previamente trabajados.
 
-![[Pasted image 20260820173723.png]]
+![Pasted image 20260820173723.png](Attachments/Pasted%20image%2020260820173723.png)
 
 #### `rmdir` (Remove Directory)
 
@@ -316,7 +317,7 @@ A continuación, se realizaron los siguientes pasos:
 
 > **Nota:** El comando `rmdir` es aplicable exclusivamente a directorios vacíos. Para remover carpetas con contenido, es necesario recurrir a `rm -r`. Se recomienda tener precaución con comandos como `rm -rf`, ya que su ejecución elimina archivos de forma permanente sin posibilidad de recuperación.
 
-![[Pasted image 20260820180148.png]]
+![Pasted image 20260820180148.png](Attachments/Pasted%20image%2020260820180148.png)
 
 ## 3. Actividad Práctica - Servicio Apache2
 
@@ -331,7 +332,7 @@ El primer paso fue actualizar la lista de paquetes disponibles en los repositori
 - **Comando utilizado:** `sudo apt update`
 - **¿Qué realiza?** Descarga la información más reciente sobre los paquetes disponibles en los repositorios, de modo que el sistema sepa qué versiones actualizadas existen. Es el paso previo recomendado antes de instalar o actualizar software.
 
-![[Screenshot_20260817_103631.png]]
+![Screenshot_20260817_103631.png](Attachments/Screenshot_20260817_103631.png)
 
 ### 3.2 Actualización de los paquetes instalados
 
@@ -340,7 +341,7 @@ Posteriormente se actualizaron los paquetes ya instalados en el sistema.
 - **Comando utilizado:** `sudo apt upgrade -y`
 - **¿Qué realiza?** Aplica las actualizaciones de todos los paquetes que tengan una versión más reciente disponible. La opción `-y` responde automáticamente "sí" a cualquier confirmación, evitando la interacción manual durante el proceso.
 
-![[Screenshot_20260817_104025.png]]
+![Screenshot_20260817_104025.png](Attachments/Screenshot_20260817_104025.png)
 
 ### 3.3 Instalación de Apache2
 
@@ -349,7 +350,7 @@ Con los repositorios actualizados, se procedió a instalar el servidor web Apach
 - **Comando utilizado:** `sudo apt install apache2 -y`
 - **¿Qué realiza?** Descarga e instala Apache2 junto con sus dependencias. Apache2 es el servidor web más utilizado en Linux: se encarga de recibir las peticiones de los navegadores y entregarles las páginas web solicitadas. La opción `-y` confirma automáticamente la instalación.
 
-![[Screenshot_20260817_104401.png]]
+![Screenshot_20260817_104401.png](Attachments/Screenshot_20260817_104401.png)
 
 ### 3.4 Verificación del estado del servicio
 
@@ -358,7 +359,7 @@ Para confirmar que Apache2 quedó instalado y en funcionamiento, se consultó el
 - **Comando utilizado:** `sudo systemctl status apache2`
 - **¿Qué realiza?** Muestra el estado actual del servicio, incluyendo si se encuentra activo, sus procesos y registros recientes. Para confirmar que el servicio está encendido, se debe observar la línea `Active: active (running)`.
 
-![[Screenshot_20260817_104504.png]]
+![Screenshot_20260817_104504.png](Attachments/Screenshot_20260817_104504.png)
 
 Existen además otros comandos útiles para gestionar el servicio:
 
@@ -369,7 +370,7 @@ Existen además otros comandos útiles para gestionar el servicio:
 
 Como verificación de que el servidor funciona correctamente, se accedió desde el navegador web a la dirección `http://localhost`. Esta ruta apunta al propio equipo, donde el servidor Apache2 escucha las peticiones. Al ingresar, se mostró la página por defecto de Apache2, es decir, el archivo `index.html` incluido con la instalación, lo que confirma que el servicio está operando.
 
-![[Screenshot_20260817_104602.png]]
+![Screenshot_20260817_104602.png](Attachments/Screenshot_20260817_104602.png)
 
 ### 3.6 Acceso al directorio de archivos web
 
@@ -379,7 +380,7 @@ Los archivos que Apache2 sirve se encuentran en el directorio `/var/www/html/`. 
 - Se ejecutó `ls` para listar el contenido y se observó la presencia del archivo `index.html`.
 - Se abrió el archivo con el comando `sudo nano index.html`.
 
-![[Screenshot_20260817_151339.png]]
+![Screenshot_20260817_151339.png](Attachments/Screenshot_20260817_151339.png)
 
 > **¿Por qué usamos `sudo`?** El directorio `/var/www/html/` pertenece al usuario *root* (administrador). Por lo tanto, para poder modificar los archivos dentro de él se necesitan privilegios elevados; sin `sudo` el sistema denegaría la edición.
 >
@@ -391,11 +392,11 @@ Al abrir el archivo con nano, se pudo ver el código HTML que generaba la págin
 
 > **¿Qué es HTML?** Es el lenguaje de marcado con el que se estructura el contenido de las páginas web. Mediante etiquetas (como `<h1>`, `<p>` o `<body>`) se definen los títulos, párrafos y demás elementos que el navegador interpreta y muestra al usuario.
 
-![[Screenshot_20260817_110037.png]]
+![Screenshot_20260817_110037.png](Attachments/Screenshot_20260817_110037.png)
 
 Se eliminó todo el contenido original y se reemplazó por unas líneas básicas de HTML, creando una página personalizada.
 
-![[Screenshot_20260817_110436.png]]
+![Screenshot_20260817_110436.png](Attachments/Screenshot_20260817_110436.png)
 
 Para finalizar la edición se utilizaron los siguientes comandos de nano:
 
@@ -406,7 +407,7 @@ Para finalizar la edición se utilizaron los siguientes comandos de nano:
 
 Finalmente, se accedió nuevamente a `http://localhost` desde el navegador. En esta ocasión se mostró el nuevo contenido en lugar de la página por defecto. Fue necesario recargar la página en el navegador para observar los cambios. El hecho de que el navegador muestre el contenido personalizado confirma que el archivo fue editado correctamente y que el servidor continúa funcionando de forma adecuada.
 
-![[Screenshot_20260817_110538 1.png]]
+![Screenshot_20260817_110538 1.png](Attachments/Screenshot_20260817_110538%201.png)
 
 ### Conclusiones
 

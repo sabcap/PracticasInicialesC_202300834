@@ -1,9 +1,9 @@
 # Reporte 3: Práctica Inicial de Linux y Servicios Web
 
-**Universidad de San Carlos de Guatemala**  
-**Facultad de Ingeniería**  
-**Escuela de Ciencias y Sistemas (ECYS)**  
-**Prácticas Iniciales - Sección C**  
+- **Universidad de San Carlos de Guatemala**  
+- **Facultad de Ingeniería**  
+- **Escuela de Ciencias y Sistemas (ECYS)**  
+- **Prácticas Iniciales - Sección C**  
 
 ---
 

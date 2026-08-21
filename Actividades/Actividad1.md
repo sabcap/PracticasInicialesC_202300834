@@ -1,12 +1,12 @@
 # Universidad de San Carlos de Guatemala
-**Facultad de Ingeniería**
-**Escuela de Ciencias y Sistemas (ECYS)**
-**Prácticas Iniciales - Sección C**
+- **Facultad de Ingeniería**
+- **Escuela de Ciencias y Sistemas (ECYS)**
+- **Prácticas Iniciales - Sección C**
 
 ---
-**Nombre**: Josué Javier Carrera Soyós
-**Carné**: 202300834
-**Fecha**: 13 de agosto de 2026
+- **Nombre**: Josué Javier Carrera Soyós
+- **Carné**: 202300834
+- **Fecha**: 13 de agosto de 2026
 
 ---
 # Tarea: Instalación de Ubuntu y Comandos Iniciales.
@@ -19,7 +19,7 @@
 - **Modalidad**: Virtualización
 - **Hipervisor**: VirtualBox
 
-![[Pasted image 20260820171119.png]]
+![Pasted image 20260820171119.png](../Attachments/Pasted%20image%2020260820171119.png)
 
 
 ## 2. Comandos de Navegación
@@ -44,7 +44,7 @@ Partiendo del directorio `/home/vboxuser/` se ejecutaron los comandos `pwd`, `pw
 
 Se obtendría una diferencia únicamente si el directorio actual se alcanzara mediante un enlace simbólico: `pwd -P` mostraría la ruta real del directorio destino (resolviendo el enlace), mientras que `pwd -L` mostraría la ruta lógica que incluye el enlace simbólico.
 
-![[Pasted image 20260819220805.png]]
+![Pasted image 20260819220805.png](../Attachments/Pasted%20image%2020260819220805.png)
 ### **`cd` (Change Directory)**
 ---
 **Sintaxis:** `cd [directorio]`
@@ -71,7 +71,7 @@ Partiendo del directorio `/home/vboxuser/` se ejecutaron los siguientes comandos
 - `cd Desktop/Tarea/`: navegó directamente a la carpeta `Tarea` ubicada dentro de `Desktop`, usando una ruta relativa.
 - `cd`: sin argumentos, regresó al directorio personal `/home/vboxuser/`.
 
-![[Pasted image 20260819222456.png]]
+![Pasted image 20260819222456.png](../Attachments/Pasted%20image%2020260819222456.png)
 ## 3. Comandos de Listado y Creación
 
 ### **`ls` (List)**
@@ -99,13 +99,13 @@ Estando en `/home/vboxuser/` se ejecutaron los comandos `ls`, `ls -l` y `ls -a`:
 - `ls -l`: mostró el listado en formato detallado (permisos, propietario, tamaño y fecha de modificación).
 - `ls -a`: listó todos los archivos, incluidos los ocultos (los que comienzan con `.`).
 
-![[Pasted image 20260819222706.png]]
+![Pasted image 20260819222706.png](../Attachments/Pasted%20image%2020260819222706.png)
 
 Luego se ejecutaron los comandos `ls -lh` y `ls -la`:
 - `ls -lh`: mostró el listado detallado con los tamaños en formato legible para humanos (KB, MB, GB).
 - `ls -la`: combinó el formato largo con la visualización de los archivos ocultos.
 
-![[Pasted image 20260819222857.png]]
+![Pasted image 20260819222857.png](../Attachments/Pasted%20image%2020260819222857.png)
 ## 4. Comandos de Manipulación de Archivos
 ### **`cp` (Copy)**
 ---
@@ -130,7 +130,7 @@ Posteriormente, se realizaron las siguientes operaciones:
 - `cp -r Reporte/ Reporte-copy/`: Copió la carpeta `Reporte` y todo su contenido de forma recursiva hacia un nuevo directorio denominado `Reporte-copy`.
 - `ls Reporte-copy/`: Permitió comprobar que la estructura interna y los archivos contenidos en la carpeta original fueron duplicados de manera exitosa.
 
-![[Pasted image 20260820172218.png]]
+![Pasted image 20260820172218.png](../Attachments/Pasted%20image%2020260820172218.png)
 ### **`mkdir` (Make Directory)**
 ---
 **Sintaxis:** `mkdir [opciones] nombre_directorio`
@@ -156,7 +156,7 @@ A continuación, se realizaron los procedimientos de creación de directorios:
 
 Para finalizar, se ejecutaron comandos `ls` en las rutas creadas para verificar la correcta estructura del árbol de directorios.
 
-![[Pasted image 20260820172817.png]]
+![Pasted image 20260820172817.png](../Attachments/Pasted%20image%2020260820172817.png)
 
 ### **`mv` (Move)**
 ---
@@ -181,7 +181,7 @@ Luego se realizaron las siguientes acciones:
 - `ls`: Permitió corroborar que el archivo original ya no figuraba en la ruta actual (`Desktop`).
 - `ls Reporte/`: Confirmó la reubicación exitosa del archivo dentro de la carpeta `Reporte`.
 
-![[Pasted image 20260820173250.png]]
+![Pasted image 20260820173250.png](../Attachments/Pasted%20image%2020260820173250.png)
 
 ### **`rm` (Remove)**
 ---
@@ -208,7 +208,7 @@ A continuación, se llevaron a cabo los siguientes pasos:
 - `rm -r Reporte/`: Eliminó la carpeta `Reporte` junto con todo su contenido interno de manera recursiva.
 - `ls`: Confirmó de forma definitiva la eliminación total de los archivos y directorios previamente trabajados.
 
-![[Pasted image 20260820173723.png]]
+![Pasted image 20260820173723.png](../Attachments/Pasted%20image%2020260820173723.png)
 ### **`rmdir` (Remove Directory)**
 ---
 **Sintaxis:** `rmdir [opciones] directorio`
@@ -233,4 +233,4 @@ A continuación, se realizaron los siguientes pasos:
 
 > **Nota:** El comando `rmdir` es aplicable exclusivamente a directorios vacíos. Para remover carpetas con contenido, es necesario recurrir a `rm -r`.
 
-![[Pasted image 20260820180148.png]]
+![Pasted image 20260820180148.png](../Attachments/Pasted%20image%2020260820180148.png)
