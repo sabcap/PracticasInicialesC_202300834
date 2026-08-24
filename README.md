@@ -10,7 +10,7 @@
 ### Datos del Estudiante
 - **Nombre:** Josué Javier Carrera Soyós
 - **Carné:** 202300834
-- **Fecha:** 20 de agosto de 2026
+- **Fecha:** 27 de agosto de 2026
 
 ---
 
@@ -37,15 +37,8 @@ El reporte se organiza en tres documentos principales que detallan las diferente
 
 ---
 
-## Organización de Archivos y Multimedia
-
-- **`Attachments/`**: Carpeta que almacena las capturas de pantalla y evidencias visuales activas utilizadas en los documentos Markdown.
-
----
-
 ## Entorno Técnico Utilizado
 
 - **Sistema Operativo:** Ubuntu 24.04 LTS (64 bits)
 - **Hipervisor:** Oracle VM VirtualBox
 - **Servidor Web:** Apache2 (`apache2.service`)
-- **Editor de Texto en Terminal:** GNU nano

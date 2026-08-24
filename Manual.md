@@ -25,7 +25,7 @@ A lo largo de todo el reporte se hace uso de la **terminal**, una herramienta cl
 - Desarrollar de manera práctica destrezas en la navegación del sistema de archivos, la gestión estructurada de directorios y la manipulación de elementos desde la terminal, asimilando conceptos sobre enlaces simbólicos, tipos de rutas y permisos lógicos.
 - Implementar, configurar y validar un servidor web Apache2 en el entorno local, administrando correctamente el estado del servicio y personalizando el contenido mediante la edición segura de archivos del sistema a través de la terminal.
 
-## 1. Entorno de instalación.
+## 1. Instalación de Ubuntu.
 
 **Descripción**: Instalación del sistema operativo Linux, específicamente Ubuntu 24.04, mediante virtualización sobre VirtualBox.
 
