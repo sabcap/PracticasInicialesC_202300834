@@ -99,9 +99,13 @@ En la sección *Specify Virtual Hardware* se asignan los recursos de hardware qu
 En la sección *Create a New Virtual Hard Disk* se configura el almacenamiento:
 
 - Se elige la opción **Create a New Virtual Hard Disk**, que genera un archivo de disco virtual donde se guardará el sistema operativo y todos sus datos.
+- Tras esta configuración, se presiona el botón "**Finish**", lo cual inicializará el proceso de creación y configuración automática del entorno de la máquina virtual.
 
 ![Screenshot_20260817_143300.png](Attachments/Screenshot_20260817_143300.png)
 
+Al finalizar el proceso, se presentará el escritorio de la distribución Ubuntu, confirmando que la máquina virtual ha sido creada correctamente y se encuentra lista para su uso.
+
+![Screenshot_20260824_142118.png](Attachments/Screenshot_20260824_142118.png)
 ## 2. Guía De Comandos CLI
 
 **Descripción**: Comandos básicos de la terminal en Linux, organizados por su función: navegación, listado y creación, y manipulación de archivos.
@@ -126,11 +130,15 @@ Muestra la ruta del directorio en el que el usuario se encuentra actualmente.
 
 **Ejemplo práctico:**
 
-Partiendo del directorio `/home/vboxuser/` se ejecutaron los comandos `pwd`, `pwd -P` y `pwd -L`, y los tres devolvieron la misma respuesta: `/home/vboxuser`. Esto se debe a que el directorio actual no se accedió a través de un enlace simbólico, por lo que la ruta física (real) y la ruta lógica coinciden.
+Partiendo del directorio `/home/vboxuser/Desktop` se ejecutó el comando `ls` para listar el contenido, donde se identificó una carpeta denominada `Downloads` (la cual es un enlace simbólico a la carpeta de descargas del usuario).
 
-Se obtendría una diferencia únicamente si el directorio actual se alcanzara mediante un enlace simbólico: `pwd -P` mostraría la ruta real del directorio destino (resolviendo el enlace), mientras que `pwd -L` mostraría la ruta lógica que incluye el enlace simbólico.
+A continuación, se realizaron las siguientes operaciones dentro de la carpeta `Downloads`:
+- `pwd`: Devolvió la ruta lógica `/home/vboxuser/Desktop/Downloads`, que representa la ruta de acceso al enlace simbólico.
+- `pwd -P`: Devolvió la ruta física real `/home/vboxuser/Downloads`, resolviendo la ubicación exacta en el sistema de archivos, omitiendo el enlace.
 
-![Pasted image 20260819220805.png](Attachments/Pasted%20image%2020260819220805.png)
+> **Diferencia técnica:** El comando `pwd` por defecto opera en modo lógico (`-L`), mostrando la ruta tal como fue accedida. Al utilizar la opción `-P` (Physical), el sistema interpreta el enlace simbólico y muestra la ruta del directorio destino real en el disco.
+
+![Pasted image 20260824142641.png](Attachments/Pasted%20image%2020260824142641.png)
 
 #### `cd` (Change Directory)
 
