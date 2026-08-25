@@ -51,6 +51,8 @@ Para confirmar que Apache2 quedó instalado y en funcionamiento, se consultó el
 
 ![Screenshot_20260817_104504.png](../Attachments/Screenshot_20260817_104504.png)
 
+> **Nota técnica para salir del estado de la terminal:** Al ejecutar `systemctl status`, la terminal muestra los registros en modo de lectura interactiva (visor `less`) y se queda en espera. Para salir de este visor y regresar a la línea de comandos de la terminal, se debe presionar la tecla **`q`** (quit).
+
 Existen además otros comandos útiles para gestionar el servicio:
 
 - `sudo systemctl start apache2`: inicia el servicio si se encuentra detenido.
@@ -99,6 +101,12 @@ Para finalizar la edición se utilizaron los siguientes comandos de nano:
 Finalmente, se accedió nuevamente a `http://localhost` desde el navegador. En esta ocasión se mostró el nuevo contenido en lugar de la página por defecto. Fue necesario recargar la página en el navegador para observar los cambios. El hecho de que el navegador muestre el contenido personalizado confirma que el archivo fue editado correctamente y que el servidor continúa funcionando de forma adecuada.
 
 ![Screenshot_20260817_110538 1.png](../Attachments/Screenshot_20260817_110538%201.png)
+
+> **Detención del servicio:** Si se desea apagar o detener el servidor Apache2 una vez finalizadas las pruebas, se debe ejecutar el siguiente comando en la terminal:
+> ```bash
+> sudo systemctl stop apache2
+> ```
+> Para verificar que el servicio ha sido detenido correctamente, se puede volver a consultar su estado con `sudo systemctl status apache2` (observando que cambie a `inactive (dead)`).
 
 ### Conclusiones
 - La actualización periódica de paquetes mediante `apt update` y `apt upgrade` asegura la estabilidad y seguridad del sistema antes de instalar nuevos servicios.

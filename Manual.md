@@ -182,7 +182,9 @@ Lista los archivos y carpetas contenidos en un directorio.
 - `ls -lh`: Muestra los detalles con tamaños legibles para humanos (KB, MB, GB).
 - `ls -la`: Combina el formato largo con la visualización de archivos ocultos.
 
-> **Nota técnica:** En el formato detallado (`-l`), el primer carácter indica el tipo de elemento (`-` para archivo regular y `d` para directorio), seguido por la cadena de permisos de lectura (`r`), escritura (`w`) y ejecución (`x`) para el propietario, grupo y otros usuarios.
+> **Nota técnica (Permisos):** En el formato detallado (`-l`), el primer carácter indica el tipo de elemento (`-` para archivo regular y `d` para directorio), seguido por la cadena de permisos de lectura (`r`), escritura (`w`) y ejecución (`x`) para el propietario, grupo y otros usuarios.
+>
+> **Concepto clave (Archivos ocultos):** En entornos Linux, los archivos y directorios cuyo nombre inicia con un punto (ej. `.bashrc`, `.profile`) son considerados archivos ocultos o de configuración. No se muestran en listados estándar para evitar modificaciones accidentales.
 
 **Ejemplo práctico:**
 
@@ -264,6 +266,8 @@ Mueve archivos o directorios, y también se utiliza para renombrarlos.
 - `mv -i origen destino`: Solicita confirmación antes de sobrescribir.
 - `mv -n origen destino`: No sobrescribe ningún archivo existente en el destino.
 
+> **Concepto clave:** En Linux no existe un comando nativo independiente para "renombrar". El comando `mv` reubica el puntero del archivo o modifica su nombre actualizando su entrada en el sistema de archivos (inodo), sin necesidad de duplicar datos en el disco.
+
 **Ejemplo práctico:**
 
 Partiendo del directorio `/home/vboxuser/Desktop`, se ejecutó el comando `ls` para verificar los elementos disponibles, observando el archivo `202300834` y la carpeta vacía `Reporte`.
@@ -287,6 +291,8 @@ Elimina archivos o directorios.
 - `rm -r carpeta/`: Elimina una carpeta y todo su contenido de forma recursiva.
 - `rm -f archivo`: Fuerza la eliminación sin pedir confirmación ni mostrar advertencias.
 - `rm -rf carpeta/`: Fuerza la eliminación recursiva de un directorio completo.
+
+> **Nota técnica:** A diferencia de los entornos gráficos de escritorio, el comando `rm` no envía los elementos a una papelera de reciclaje; desvincula directamente los datos del sistema de archivos, por lo que su ejecución es **permanente e irreversible**.
 
 **Ejemplo práctico:**
 
@@ -349,6 +355,8 @@ Posteriormente se actualizaron los paquetes ya instalados en el sistema.
 - **Comando utilizado:** `sudo apt upgrade -y`
 - **¿Qué realiza?** Aplica las actualizaciones de todos los paquetes que tengan una versión más reciente disponible. La opción `-y` responde automáticamente "sí" a cualquier confirmación, evitando la interacción manual durante el proceso.
 
+> **Nota técnica:** Ambos comandos suelen confundirse: `apt update` únicamente refresca el índice de paquetes disponibles (no instala nada), mientras que `apt upgrade` descarga e instala las versiones nuevas apoyándose en esa información actualizada. Por ello se ejecutan siempre en este orden.
+
 ![Screenshot_20260817_104025.png](Attachments/Screenshot_20260817_104025.png)
 
 ### 3.3 Instalación de Apache2
@@ -369,10 +377,15 @@ Para confirmar que Apache2 quedó instalado y en funcionamiento, se consultó el
 
 ![Screenshot_20260817_104504.png](Attachments/Screenshot_20260817_104504.png)
 
+> **Nota técnica para salir del estado de la terminal:** Al ejecutar `systemctl status`, la terminal muestra los registros en modo de lectura interactiva (visor `less`) y se queda en espera. Para salir de este visor y regresar a la línea de comandos de la terminal, se debe presionar la tecla **`q`** (quit).
+
 Existen además otros comandos útiles para gestionar el servicio:
 
 - `sudo systemctl start apache2`: inicia el servicio si se encuentra detenido.
 - `sudo systemctl stop apache2`: detiene el servicio.
+- `sudo systemctl restart apache2`: reinicia el servicio para aplicar cambios de configuración.
+
+> **Nota técnica:** Ninguno de los comandos anteriores altera el comportamiento del sistema al encenderlo. Si se desea que Apache2 se inicie automáticamente en cada arranque, debe habilitarse con `sudo systemctl enable apache2`.
 
 ### 3.5 Verificación en el navegador web
 
@@ -416,6 +429,14 @@ Para finalizar la edición se utilizaron los siguientes comandos de nano:
 Finalmente, se accedió nuevamente a `http://localhost` desde el navegador. En esta ocasión se mostró el nuevo contenido en lugar de la página por defecto. Fue necesario recargar la página en el navegador para observar los cambios. El hecho de que el navegador muestre el contenido personalizado confirma que el archivo fue editado correctamente y que el servidor continúa funcionando de forma adecuada.
 
 ![Screenshot_20260817_110538 1.png](Attachments/Screenshot_20260817_110538%201.png)
+
+> **Verificación sin entorno gráfico:** En servidores remotos o sin interfaz gráfica, la comprobación equivalente se realiza desde la terminal con `curl http://localhost`, comando que imprime en pantalla el contenido HTML que Apache2 entrega como respuesta.
+
+> **Detención del servicio:** Si se desea apagar o detener el servidor Apache2 una vez finalizadas las pruebas, se debe ejecutar el siguiente comando en la terminal:
+> ```bash
+> sudo systemctl stop apache2
+> ```
+> Para verificar que el servicio ha sido detenido correctamente, se puede volver a consultar su estado con `sudo systemctl status apache2` (observando que cambie a `inactive (dead)`).
 
 ### Conclusiones
 
