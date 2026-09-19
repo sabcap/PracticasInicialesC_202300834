@@ -1,7 +1,7 @@
 # Actividad en Clase: Virtualización y Active Directory
 **Proyecto Final - Fase 1**
 
-- **Fecha**: 17 de agosto de 2026
+- **Fecha**: 17 de septiembre de 2026
 - **Estudiante 1**: Josué Javier Carrera Soyós
 - **Estudiante 2**: Alvaro Javier Paredes Sulá
 - **Grupo**: 7
